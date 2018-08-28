@@ -17,10 +17,7 @@ public class Main {
 
         keskiarvo = (double)keskiarvo/5;
 
-        JTextArea tulostus = new JTextArea();
-        tulostus.append("Keskiarvo: " + keskiarvo);
-        JOptionPane.showMessageDialog(null, tulostus, "", JOptionPane.INFORMATION_MESSAGE);
-        System.exit(0);
+        System.out.println("Average is: " + keskiarvo);
 
     }
 }
