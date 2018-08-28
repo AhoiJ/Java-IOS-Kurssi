@@ -18,6 +18,6 @@ public class Main {
         keskiarvo = (double)keskiarvo/5;
 
         System.out.println("Average is: " + keskiarvo);
-
+        System.exit(0);
     }
 }
