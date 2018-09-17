@@ -1,10 +1,15 @@
+import javax.swing.JOptionPane;
+
 class Worker extends Thread {
 
     private int sleepTime = 1000; // milliseconds
-    public Worker ( String name, int sleepTime){
-        super (name);
+
+    public Worker(String name, int sleepTime) {
+        super(name);
         this.sleepTime = sleepTime;
     }
+
+
     public void run(){
         for (int i = 0; i<20; i++){
             System.out.println("Thread: " + getName() + " " + i);
@@ -28,6 +33,4 @@ public class ThreadExample{
         worker2.start();
         worker3.start();
     }
-
-
 }
