@@ -1,62 +1,37 @@
-import javax.swing.*;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.CountDownLatch;
-
-// Lisää threadit ja dialogivalinnat
 
 public class Main {
 
     public static void main(String[] args) {
 
-        CountDownLatch latch = new CountDownLatch(1);
+            String url = "https://statsapi.web.nhl.com/api/v1/teams"; // the url where program gets its data
 
-            String url = "https://statsapi.web.nhl.com/api/v1/teams";
-
-            // Initialises timer
-          //  Timer timer = new Timer();
-
-            // Makes a new DataApi class
-            DataApi dataApi = new DataApi(url);
+            // Makes a new DataApi and Menu class
+            DataApi dataApi = new DataApi(url); // new DataApi (url) sets url value to dataApi
             Menu menuClass = new Menu();
+
             // Makes a new thread
-          //  Thread dataThread = new Thread(dataApi);
             Thread menuThread = new Thread(menuClass);
 
-          //  dataThread.start();
 
             // Starts a timed thread to run on loop every minute
-
             TimerTask repeatedTask = new TimerTask() {
-
                 @Override
                 public void run() {
-                    dataApi.run();
-                    menuClass.setTeamsList(dataApi.getTeams());
+                    dataApi.run(); // starts dataApi function
+                    menuClass.setTeamsList(dataApi.getTeams()); // inserts retrieved data to Menu class teams list
                 }
             };
             Timer timer = new Timer("Timer");
-            long delay = 100L;
-            long period = 1000L * 10L;
-            timer.scheduleAtFixedRate(repeatedTask, delay, period);
+            long delay = 1000L;
+            long period = 1000L * 60L; // sets to repeat every minute
+            timer.scheduleAtFixedRate(repeatedTask, delay, period); // calls the function above
 
-/*
-            while (dataThread.isAlive()) {
-             //   System.out.println("Dataa haetaan...");
-                try {
-
-                    Thread.sleep(6000); // 1 min == 60 000 ms
-
-                } catch (InterruptedException ex) {
-                    Thread.currentThread().interrupt();
-                }
-            }
-            */
 
         // Starts a thread
         menuThread.start();
-
+                // Stops the program from stopping until menuThread has finished
             while (menuThread.isAlive()) {
                 try {
                     Thread.sleep(2000);
@@ -65,6 +40,7 @@ public class Main {
                     Thread.currentThread().interrupt();
                 }
             }
+            // Terminates the timer thread
             timer.cancel();
             timer.purge();
     }
