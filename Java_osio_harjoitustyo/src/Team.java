@@ -1,4 +1,3 @@
-/*
 public class Team {
 
     private String id;
@@ -39,4 +38,3 @@ public class Team {
                 '}';
     }
 }
-*/

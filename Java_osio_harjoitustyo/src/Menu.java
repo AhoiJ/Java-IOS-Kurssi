@@ -2,9 +2,11 @@ import javax.swing.*;
 import java.util.List;
 
 public class Menu implements Runnable {
-   List<Teams> teams;
 
-    Menu(List<Teams> teams) {
+  private List<Team> teams;
+
+
+    public void setTeamsList(List<Team> teams) {
         this.teams = teams;
     }
 
@@ -17,20 +19,28 @@ public class Menu implements Runnable {
                     " 2. Poista data \n 3. Poistu sovelluksesta");
 
             if (choice.equals("1")) {
+                try {
+                    if (!teams.isEmpty()) {
 
-            //    if (!teams.isEmpty()) {
+                        for (Team e : teams) {
+                            System.out.println(" ID: " + e.getid() + " Name: " + e.getName() +
+                                    " Team abbreviation: " + e.getTeamAbbreviation() +
+                                    " Team name : " + e.getTeamName());
+                        }
+                    } else
+                        System.out.println(" No Data! ");
+                }catch (NullPointerException e){
+                    System.out.println(e);
+                }
 
-                    for (Teams e : teams) {
-                        System.out.println(" ID: " + e.getid() + " Name: " + e.getName() +
-                                " team abbreviation: " + e.getTeamAbbreviation() +
-                                " team name : " + e.getTeamName());
-                    }
-              //  } else
-                //    System.out.println(" No Data! ");
+
             }
             if (choice.equals("2")) {
-
-
+                try{
+                    teams.clear();
+                }catch(NullPointerException y){
+                    System.out.println(y);
+                }
 
             }
         } while (!choice.equals("3"));
