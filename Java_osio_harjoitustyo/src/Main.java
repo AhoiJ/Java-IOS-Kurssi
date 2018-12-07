@@ -1,36 +1,48 @@
-import javax.swing.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main {
-        public static void main(String[] args){
-            String url = "https://rata.digitraffic.fi/api/v1/live-trains/station/HKI";
-            DataApi dataApi = new DataApi(url);
-            Thread dataThread = new Thread(dataApi);
-            dataThread.start();
-            while (dataThread.isAlive()) {
-                // System.out.println("Dataa haetaan...");
+
+    public static void main(String[] args) {
+
+            String url = "https://statsapi.web.nhl.com/api/v1/teams"; // the url where program gets its data
+
+            // Makes a new DataApi and Menu class
+            DataApi dataApi = new DataApi(url); // new DataApi (url) sets url value to dataApi
+            Menu menuClass = new Menu();
+
+            // Makes a new thread
+            Thread menuThread = new Thread(menuClass);
+
+
+            // Starts a timed thread to run on loop every minute
+            TimerTask repeatedTask = new TimerTask() {
+                @Override
+                public void run() {
+                    dataApi.run(); // starts dataApi function
+                    menuClass.setTeamsList(dataApi.getTeams()); // inserts retrieved data to Menu class teams list
+                }
+            };
+            Timer timer = new Timer("Timer");
+            long delay = 1000L;
+            long period = 1000L * 60L; // sets to repeat every minute
+            timer.scheduleAtFixedRate(repeatedTask, delay, period); // calls the function above
+
+
+        // Starts a thread
+        menuThread.start();
+                // Stops the program from stopping until menuThread has finished
+            while (menuThread.isAlive()) {
                 try {
-                    Thread.sleep(200);
+                    Thread.sleep(2000);
+
                 } catch (InterruptedException ex) {
                     Thread.currentThread().interrupt();
                 }
-
             }
-            // dialogChoise
-            String choise;
-            do {
-                choise = JOptionPane.showInputDialog(null, "1. Tulosta data \n" +
-                        " 2. Poista data \n 3. Poistu sovelluksesta");
-
-                if (choise.equals("1")) {
-
-                }
-                if (choise.equals("2")){
-
-
-
-                }
-            }while (!choise.equals("3"));
-        }
+            // Terminates the timer thread
+            timer.cancel();
+            timer.purge();
     }
-
+}
 
