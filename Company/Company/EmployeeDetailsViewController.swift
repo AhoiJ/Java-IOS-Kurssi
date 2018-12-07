@@ -44,17 +44,6 @@ class EmployeeDetailsViewController: UITableViewController {
         
         super.viewDidLoad()
         
-     /*
-        let tap: UIGestureRecognizer = UITapGestureRecognizer(target:self, action:
-            #selector(EmployeeDetailsViewController.dismissKeyboard))
-    
-        view.addGestureRecognizer(tap)
-    */
-        
-        
-        
-
-
     }
     
 }

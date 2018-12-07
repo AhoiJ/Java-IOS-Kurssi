@@ -122,4 +122,4 @@ extension Employee {
     }
 }
 
-// + emp.lname + emp.salary + emp.bdate + emp.email + emp.dep + emp.dname + emp.phone1 + emp.phone2 + emp.image
+
