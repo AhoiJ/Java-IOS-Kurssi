@@ -28,7 +28,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wes-ZB-d8J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Projects" id="mnI-ki-8wP"/>
+                    <tabBarItem key="tabBarItem" title="Projects" image="044" id="mnI-ki-8wP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DjD-UJ-62Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,7 +53,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Qiv-5v-wMx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Departments" id="fN4-jk-g4Q"/>
+                    <tabBarItem key="tabBarItem" title="Departments" image="026" id="fN4-jk-g4Q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2p-xI-abK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,7 +78,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Zvf-Nn-HxI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="Mt2-II-cUE"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="038" id="Mt2-II-cUE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdZ-mb-6sq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -743,7 +743,7 @@
         <scene sceneID="uV4-D3-hIr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SIB-7l-rKn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Employees" id="Dpl-aj-iYA"/>
+                    <tabBarItem key="tabBarItem" title="Employees" image="003" id="Dpl-aj-iYA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XBo-oL-P8F">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -795,4 +795,10 @@
             <point key="canvasLocation" x="982" y="20"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="003" width="40" height="40"/>
+        <image name="026" width="40" height="40"/>
+        <image name="038" width="40" height="40"/>
+        <image name="044" width="40" height="40"/>
+    </resources>
 </document>
