@@ -79,24 +79,24 @@ extension Employee {
     }
 }
 extension Employee {
-    static func deleteEmployee(emp: Employee, postCompleted : @escaping (Bool, String) -> Void) {
-        let deleteUrl = "employee/" + emp.id
-        API.write(method: "DELETE", body:[:],postUrl:deleteUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
-            
-            if(succeeded) {
-                print( "Success!")
-            }
-            else {
-                print("Failed!")
-            }
-            postCompleted (succeeded, msg)
-        })
-    }
+static func deleteEmployee(emp: Employee, postCompleted : @escaping (Bool, String) -> Void) {
+    let deleteUrl = "employee/" + emp.id
+    API.write(method: "DELETE", body:[:],postUrl:deleteUrl, postCompleted:  { (succeeded: Bool, msg: String) -> () in
+        
+        if(succeeded) {
+            print( "Success!")
+        }
+        else {
+            print("Failed!")
+        }
+        postCompleted (succeeded, msg)
+    })
+}
 }
 
 extension Employee {
     static func addEmployee(emp: Employee, postCompleted : @escaping (Bool, String) -> Void) {
-        let addUrl = "employee"
+     let addUrl = "employee"
         API.write(method: "POST",
                   body:["id":emp.id,
                         "fname":emp.fname!,
@@ -109,46 +109,17 @@ extension Employee {
                         "phone1":emp.phone1!,
                         "phone2":emp.phone2!,
                         "image":emp.image!],postUrl:addUrl, postCompleted: {(succeeded: Bool, msg: String) -> () in
-                            
-                            if succeeded {
-                                print ("Success!")
-                            }
-                            else {
-                                print("Failed!")
-                            }
-                            postCompleted (succeeded, msg)
+            
+            if succeeded {
+                print ("Success!")
+            }
+            else {
+                print("Failed!")
+            }
+            postCompleted (succeeded, msg)
         })
         
     }
 }
 
-extension Employee {
-    static func modifyEmployee(emp: Employee, postCompleted : @escaping (Bool, String) -> Void) {
-        let modUrl = "employees/"
-        API.write(method: "PUT",
-                  body:["id":emp.id,
-                        "fname":emp.fname!,
-                        "lname":emp.lname!,
-                        "salary":emp.salary!,
-                        "bdate":emp.bdate!,
-                        "email":emp.email!,
-                        "dep":emp.dep!,
-                        "dname":emp.dname!,
-                        "phone1":emp.phone1!,
-                        "phone2":emp.phone2!,
-                        "image":emp.image!],postUrl:modUrl, postCompleted: {(succeeded: Bool, msg: String) -> () in
-                            
-                            if succeeded {
-                                print ("Success!")
-                            }
-                            else {
-                                print("Failed!")
-                            }
-                            postCompleted (succeeded, msg)
-        })
-        
-    }
-}
-
-
-
+// + emp.lname + emp.salary + emp.bdate + emp.email + emp.dep + emp.dname + emp.phone1 + emp.phone2 + emp.image

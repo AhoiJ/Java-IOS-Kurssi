@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F4DD2BB2199CE1E0027B4AB /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4DD2BA2199CE1E0027B4AB /* Cache.swift */; };
-		0F7B2E6621BA94A60016DD2D /* nav_kuvat in Resources */ = {isa = PBXBuildFile; fileRef = 0F7B2E6521BA94A50016DD2D /* nav_kuvat */; };
 		0FB0EA5D21A2F41200A81DF8 /* EmployeeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB0EA5C21A2F41200A81DF8 /* EmployeeAddViewController.swift */; };
 		0FC6622821907751009B6221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6622721907751009B6221 /* AppDelegate.swift */; };
 		0FC6622A21907751009B6221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6622921907751009B6221 /* ViewController.swift */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		0F4DD2BA2199CE1E0027B4AB /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		0F7B2E6521BA94A50016DD2D /* nav_kuvat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = nav_kuvat; path = ../../../../../Downloads/nav_kuvat; sourceTree = "<group>"; };
 		0FB0EA5C21A2F41200A81DF8 /* EmployeeAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAddViewController.swift; sourceTree = "<group>"; };
 		0FC6622421907750009B6221 /* Company.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Company.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC6622721907751009B6221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				0FB0EA5C21A2F41200A81DF8 /* EmployeeAddViewController.swift */,
 				0F4DD2BA2199CE1E0027B4AB /* Cache.swift */,
 				0FC6622E21907752009B6221 /* Assets.xcassets */,
-				0F7B2E6521BA94A50016DD2D /* nav_kuvat */,
 				0FC6623021907752009B6221 /* LaunchScreen.storyboard */,
 				0FC6623321907752009B6221 /* Info.plist */,
 			);
@@ -149,7 +146,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F7B2E6621BA94A60016DD2D /* nav_kuvat in Resources */,
 				0FC6623221907752009B6221 /* LaunchScreen.storyboard in Resources */,
 				0FC6622F21907752009B6221 /* Assets.xcassets in Resources */,
 				0FC6622D21907751009B6221 /* Main.storyboard in Resources */,
